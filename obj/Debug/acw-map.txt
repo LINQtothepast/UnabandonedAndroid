@@ -1,0 +1,16 @@
+UnAbandoned.GuestChoice, UnAbandoned;md52c1e75828417817ccefe6b4d6a6e11f3.GuestChoice
+UnAbandoned.GuestChoice, UnAbandoned, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52c1e75828417817ccefe6b4d6a6e11f3.GuestChoice
+UnAbandoned.GuestChoice;md52c1e75828417817ccefe6b4d6a6e11f3.GuestChoice
+unabandoned.GuestChoice;md52c1e75828417817ccefe6b4d6a6e11f3.GuestChoice
+UnAbandoned.GuestGenerateJobs, UnAbandoned;md52c1e75828417817ccefe6b4d6a6e11f3.GuestGenerateJobs
+UnAbandoned.GuestGenerateJobs, UnAbandoned, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52c1e75828417817ccefe6b4d6a6e11f3.GuestGenerateJobs
+UnAbandoned.GuestGenerateJobs;md52c1e75828417817ccefe6b4d6a6e11f3.GuestGenerateJobs
+unabandoned.GuestGenerateJobs;md52c1e75828417817ccefe6b4d6a6e11f3.GuestGenerateJobs
+UnAbandoned.GuestLogin, UnAbandoned;md52c1e75828417817ccefe6b4d6a6e11f3.GuestLogin
+UnAbandoned.GuestLogin, UnAbandoned, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52c1e75828417817ccefe6b4d6a6e11f3.GuestLogin
+UnAbandoned.GuestLogin;md52c1e75828417817ccefe6b4d6a6e11f3.GuestLogin
+unabandoned.GuestLogin;md52c1e75828417817ccefe6b4d6a6e11f3.GuestLogin
+UnAbandoned.MainActivity, UnAbandoned;md52c1e75828417817ccefe6b4d6a6e11f3.MainActivity
+UnAbandoned.MainActivity, UnAbandoned, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52c1e75828417817ccefe6b4d6a6e11f3.MainActivity
+UnAbandoned.MainActivity;md52c1e75828417817ccefe6b4d6a6e11f3.MainActivity
+unabandoned.MainActivity;md52c1e75828417817ccefe6b4d6a6e11f3.MainActivity
