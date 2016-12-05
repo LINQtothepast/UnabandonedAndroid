@@ -54,6 +54,9 @@
     <Compile Include="GuestChoice.cs" />
     <Compile Include="GuestGenerateJobs.cs" />
     <Compile Include="GuestLogin.cs" />
+    <Compile Include="LeadATeam.cs" />
+    <Compile Include="LeaderChoice.cs" />
+    <Compile Include="LeaderCreateJobs.cs" />
     <Compile Include="LeaderLogin.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="ParentAddress.cs" />

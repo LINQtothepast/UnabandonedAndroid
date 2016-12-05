@@ -20,6 +20,20 @@ namespace UnAbandoned
             base.OnCreate(savedInstanceState);
 
             // Create your application here
+
+            SetContentView(Resource.Layout.LeaderPick2);
+
+            Button LeadButton = FindViewById<Button>(Resource.Id.Lead);
+            Button LendButton = FindViewById<Button>(Resource.Id.Lend);
+
+            LeadButton.Click += delegate
+            {
+                StartActivity(typeof(GuestLogin));
+            };
+            LendButton.Click += delegate
+            {
+                StartActivity(typeof(LeadATeam));
+            };
         }
     }
 }

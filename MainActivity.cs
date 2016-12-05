@@ -12,7 +12,7 @@ namespace UnAbandoned
         {
             base.OnCreate(bundle);
 
-            ProjectCollection.FillProjectObjects();
+            //ProjectCollection.FillProjectObjects();
 
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
