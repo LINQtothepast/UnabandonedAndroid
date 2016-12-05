@@ -18,8 +18,6 @@ namespace UnAbandoned
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            // Create your application here
             string sentChoice = Intent.GetStringExtra("Choice");
 
             // Create your application here

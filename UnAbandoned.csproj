@@ -58,6 +58,7 @@
     <Compile Include="LeaderChoice.cs" />
     <Compile Include="LeaderCreateJobs.cs" />
     <Compile Include="LeaderLogin.cs" />
+    <Compile Include="LeaderSelectDetails.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="ParentAddress.cs" />
     <Compile Include="ProjectClass.cs" />
@@ -75,6 +76,12 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\LeaderPick2.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\LeadPickFromList.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\LeaderDetails.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

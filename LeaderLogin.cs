@@ -28,11 +28,11 @@ namespace UnAbandoned
 
             LeadButton.Click += delegate
             {
-                StartActivity(typeof(GuestLogin));
+                StartActivity(typeof(LeadATeam));
             };
             LendButton.Click += delegate
             {
-                StartActivity(typeof(LeadATeam));
+                StartActivity(typeof(GuestLogin));
             };
         }
     }

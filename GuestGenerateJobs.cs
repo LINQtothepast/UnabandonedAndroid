@@ -20,7 +20,7 @@ namespace UnAbandoned
             List<Project> sortedCollection = new List<Project>();
             sortedCollection = ProjectCollection.AndroidTenMostRecent();
 
-            //ListAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, sortedCollection);
+            ListAdapter = new ArrayAdapter<Project>(this, Android.Resource.Layout.SimpleListItem1, sortedCollection);
         }
     }
 }

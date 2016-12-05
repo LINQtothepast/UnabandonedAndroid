@@ -52,7 +52,7 @@ namespace UnAbandoned
             string source;
             //Console.WriteLine("Enter the file path for the csv to load data from");
             //source = Console.ReadLine();
-            source = "..\\..\\testFixed1000.csv";
+            source = "../UnAbandoned/testFixed1000.csv";
             String[] lines = File.ReadAllLines(source);
             var query = from line in lines
                         let data = line.Split(',')
@@ -649,6 +649,17 @@ namespace UnAbandoned
             }
 
             return theList;
+        }
+
+        public static void AndroidAddProjectToList(string tempFullStreetAddress,
+                    string tempAddressCity, string tempAddressState, int tempAddressZipCode,
+                    string tempRecordID, string tempViolationType, DateTime theReportDate,
+                    decimal tempLatitude, decimal tempLongitude, string tempRecordStatus, DateTime theRecordStatusDate)
+        {
+            JobCollection.Add(new Project(tempFullStreetAddress,
+                    tempAddressCity, tempAddressState, tempAddressZipCode,
+                    tempRecordID, tempViolationType, theReportDate,
+                    tempLatitude, tempLongitude, tempRecordStatus, theRecordStatusDate));
         }
 
 

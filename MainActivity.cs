@@ -1,7 +1,14 @@
-﻿using Android.App;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Text.RegularExpressions;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+using System;
+using Android.App;
 using Android.Widget;
 using Android.OS;
-using System.Collections.Generic;
 
 namespace UnAbandoned
 {
@@ -13,6 +20,9 @@ namespace UnAbandoned
             base.OnCreate(bundle);
 
             //ProjectCollection.FillProjectObjects();
+            DateTime value = new DateTime(2016, 11, 1, 5, 20, 00);
+            ProjectCollection.AndroidAddProjectToList("street Address", "city", "state", 46637, "ENV-15-00367",
+               "Snow", value, 50, 100, "Closed", value);
 
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
