@@ -19,33 +19,37 @@ namespace UnAbandoned
 
         public string LeaderEmail
         {
-            get; set;
+            get { return leaderEmail; }
+            set { leaderEmail = value; }
         }
         public Project JobProject
         {
-            get; set;
+            get { return jobProject; }
+            set { jobProject = value; }
         }
         private List<string> VolunteerEmail
         {
-            get; set;
+            get { return volunteerEmail; }
+            set { volunteerEmail = value; }
         }
         private int VolunteerCount
         {
             get
             {
-                return VolunteerCount;
+                return volunteerCount;
             }
             set
             {
                 if (value == VolunteerEmail.Count())
-                    VolunteerCount = value;
+                    volunteerCount = value;
                 else
-                    VolunteerCount = VolunteerEmail.Count();
+                    volunteerCount = VolunteerEmail.Count();
             }
         }
         private DateTime JobDate
         {
-            get; set;
+            get { return jobDate; }
+            set { jobDate = value; }
         }
         private string JobStatus
         {
@@ -58,11 +62,13 @@ namespace UnAbandoned
                 jobStatus = value.ToLower();
             }
         }
-        public WorkingJob(string email, Project job,
-                          DateTime date, string status = "open")
+        public WorkingJob(string LEmail, Project job, List<string> VEmail,
+                          int count, DateTime date, string status = "open")
         {
-            LeaderEmail = email;
+            LeaderEmail = LEmail;
             JobProject = job;
+            VolunteerEmail = VEmail;
+            VolunteerCount = count;
             JobDate = date;
             JobStatus = status;
         }

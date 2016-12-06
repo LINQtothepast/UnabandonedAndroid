@@ -64,9 +64,11 @@
     <Compile Include="ProjectClass.cs" />
     <Compile Include="ProjectCollectionClass.cs" />
     <Compile Include="RegisteredUser.cs" />
+    <Compile Include="RegisteredUserCollection.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkingJob.cs" />
+    <Compile Include="WorkingJobCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\GuestChoice.axml">
