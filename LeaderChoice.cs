@@ -19,6 +19,7 @@ namespace UnAbandoned
         {
             base.OnCreate(savedInstanceState);
             string sentChoice = Intent.GetStringExtra("Choice");
+            string sentUser = Intent.GetStringExtra("User");
 
             // Create your application here
             SetContentView(Resource.Layout.LeaderChoice);
@@ -31,6 +32,7 @@ namespace UnAbandoned
                 var intent = new Intent(this, typeof(LeaderCreateJobs));
                 intent.PutExtra("Choice", sentChoice);
                 intent.PutExtra("Sort", "Nearest");
+                intent.PutExtra("User", sentUser);
                 StartActivity(intent);
             };
 
@@ -39,6 +41,7 @@ namespace UnAbandoned
                 var intent = new Intent(this, typeof(LeaderCreateJobs));
                 intent.PutExtra("Choice", sentChoice);
                 intent.PutExtra("Sort", "Latest");
+                intent.PutExtra("User", sentUser);
                 StartActivity(intent);
             };
         }

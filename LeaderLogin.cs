@@ -18,6 +18,8 @@ namespace UnAbandoned
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            string sentUser = Intent.GetStringExtra("User");
+
 
             // Create your application here
 
@@ -28,11 +30,15 @@ namespace UnAbandoned
 
             LeadButton.Click += delegate
             {
-                StartActivity(typeof(LeadATeam));
+                var intent = new Intent(this, typeof(LeadATeam));
+                intent.PutExtra("User", sentUser);
+                StartActivity(intent);
             };
             LendButton.Click += delegate
             {
-                StartActivity(typeof(GuestLogin));
+                var intent = new Intent(this, typeof(GuestLogin));
+                intent.PutExtra("User", sentUser);
+                StartActivity(intent);
             };
         }
     }

@@ -18,6 +18,7 @@ namespace UnAbandoned
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            string sentUser = Intent.GetStringExtra("User");
 
             // Create your application here
             SetContentView(Resource.Layout.GuestLandingPage);
@@ -33,30 +34,35 @@ namespace UnAbandoned
             {
                 var intent = new Intent(this, typeof(GuestChoice));
                 intent.PutExtra("Choice", "Any");
+                intent.PutExtra("User", sentUser);
                 StartActivity(intent);
             };
             Yard.Click += delegate
             {
                 var intent = new Intent(this, typeof(GuestChoice));
                 intent.PutExtra("Choice", "Yard");
+                intent.PutExtra("User", sentUser);
                 StartActivity(intent);
             };
             House.Click += delegate
             {
                 var intent = new Intent(this, typeof(GuestChoice));
                 intent.PutExtra("Choice", "House");
+                intent.PutExtra("User", sentUser);
                 StartActivity(intent);
             };
             Trash.Click += delegate
             {
                 var intent = new Intent(this, typeof(GuestChoice));
                 intent.PutExtra("Choice", "Trash");
+                intent.PutExtra("User", sentUser);
                 StartActivity(intent);
             };
             Other.Click += delegate
             {
                 var intent = new Intent(this, typeof(GuestChoice));
                 intent.PutExtra("Choice", "Other");
+                intent.PutExtra("User", sentUser);
                 StartActivity(intent);
             };
         }

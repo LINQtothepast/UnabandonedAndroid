@@ -22,6 +22,7 @@ namespace UnAbandoned
 
             string sentChoice = Intent.GetStringExtra("Choice");
             string sentSort = Intent.GetStringExtra("Sort");
+            string sentUser = Intent.GetStringExtra("User");
 
             // Create your application here
             List<Project> sortedCollection = new List<Project>();
@@ -33,7 +34,7 @@ namespace UnAbandoned
                 tempDistance = LocationMath.CalcDistance
                     (Convert.ToDouble(element.LatitudeX),
                     Convert.ToDouble(element.LongitudeY));
-                tempDistance = Math.Round(tempDistance, 3);
+                tempDistance = Math.Round(tempDistance, 2);
                 element.Distance = tempDistance;
             }
 
@@ -104,10 +105,13 @@ namespace UnAbandoned
             ListView.ItemClick += (object sender, Android.Widget.AdapterView.ItemClickEventArgs e) =>
             {
                 string key = ListView.GetItemAtPosition(e.Position).ToString();
-
-                var intent = new Intent(this, typeof(LeaderSelectDetails));
-                intent.PutExtra("Key", key);
+                
+                
+                var intent = new Intent(this, typeof(ThreadDemo));
+                intent.PutExtra ("Key", key);
+                intent.PutExtra("User", sentUser);
                 StartActivity(intent);
+                
             };
 
             //List<string> random = new List<string>();

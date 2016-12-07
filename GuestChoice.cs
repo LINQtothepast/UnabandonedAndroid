@@ -19,6 +19,7 @@ namespace UnAbandoned
         {
             base.OnCreate(savedInstanceState);
             string sentChoice = Intent.GetStringExtra("Choice");
+            string sentUser = Intent.GetStringExtra("User");
 
             // Create your application here
             SetContentView(Resource.Layout.GuestChoice);
@@ -33,6 +34,7 @@ namespace UnAbandoned
                 var intent = new Intent(this, typeof(GuestGenerateJobs));
                 intent.PutExtra("Choice", sentChoice);
                 intent.PutExtra("Sort", "Soonest");
+                intent.PutExtra("User", sentUser);
                 StartActivity(intent);
             };
 
@@ -41,6 +43,7 @@ namespace UnAbandoned
                 var intent = new Intent(this, typeof(GuestGenerateJobs));
                 intent.PutExtra("Choice", sentChoice);
                 intent.PutExtra("Sort", "Nearest");
+                intent.PutExtra("User", sentUser);
                 StartActivity(intent);
             };
 
@@ -49,6 +52,7 @@ namespace UnAbandoned
                 var intent = new Intent(this, typeof(GuestGenerateJobs));
                 intent.PutExtra("Choice", sentChoice);
                 intent.PutExtra("Sort", "Latest");
+                intent.PutExtra("User", sentUser);
                 StartActivity(intent);
             };
 

@@ -32,10 +32,5 @@ namespace UnAbandoned
             return Math.Sqrt(distance);
         }
 
-        //Formats the string to one decimal place
-        public static string FormatDistance(double distance)
-        {
-            return distance.ToString("N" + 1);
-        }
     }
 }

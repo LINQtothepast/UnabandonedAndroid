@@ -9,6 +9,9 @@ using System;
 using Android.App;
 using Android.Widget;
 using Android.OS;
+using Android.Runtime;
+using Android.Views;
+using Android.Content;
 
 namespace UnAbandoned
 {
@@ -48,15 +51,21 @@ namespace UnAbandoned
                     {
                         if (RegisteredUserCollection.AndroidGetLevel(EmailText.Text, PasswordText.Text) == 0)
                         {
-                            StartActivity(typeof(GuestLogin));
+                            var intent = new Intent(this, typeof(GuestLogin));
+                            intent.PutExtra("User", EmailText.Text);
+                            StartActivity(intent);
                         }
                         else if (RegisteredUserCollection.AndroidGetLevel(EmailText.Text, PasswordText.Text) == 1)
                         {
-                            StartActivity(typeof(LeaderLogin));
+                            var intent = new Intent(this, typeof(LeaderLogin));
+                            intent.PutExtra("User", EmailText.Text);
+                            StartActivity(intent);
                         }
                         else if (RegisteredUserCollection.AndroidGetLevel(EmailText.Text, PasswordText.Text) == 2)
                         {
-                            StartActivity(typeof(LeaderLogin));
+                            var intent = new Intent(this, typeof(LeaderLogin));
+                            intent.PutExtra("User", EmailText.Text);
+                            StartActivity(intent);
                         }
                     }
                     else
@@ -75,7 +84,9 @@ namespace UnAbandoned
                 if (RegisteredUserCollection.AndroidCheckUser(EmailText.Text) == false)
                 {
                     RegisteredUserCollection.AndroidAddUserToList(0, "guest", "guest", EmailText.Text, PasswordText.Text);
-                    StartActivity(typeof(GuestLogin));
+                    var intent = new Intent(this, typeof(GuestLogin));
+                    intent.PutExtra("User", EmailText.Text);
+                    StartActivity(intent);
                 }
                 else { StartActivity(typeof(MainActivity)); }
             };

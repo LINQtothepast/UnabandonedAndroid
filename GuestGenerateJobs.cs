@@ -22,6 +22,7 @@ namespace UnAbandoned
 
             string sentChoice = Intent.GetStringExtra("Choice");
             string sentSort = Intent.GetStringExtra("Sort");
+            string sentUser = Intent.GetStringExtra("User");
 
             // Create your application here
             List<Project> testProjectList = new List<Project>();
@@ -112,8 +113,10 @@ namespace UnAbandoned
             ListView.ItemClick += (object sender, Android.Widget.AdapterView.ItemClickEventArgs e) =>
             {
                 string key = ListView.GetItemAtPosition(e.Position).ToString();
+
                 var intent = new Intent(this, typeof(LeaderSelectDetails));
                 intent.PutExtra("Key", key);
+                intent.PutExtra("User", sentUser);
                 StartActivity(intent);
             };
         }

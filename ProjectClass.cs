@@ -373,7 +373,7 @@ namespace UnAbandoned
                 RecordID, ViolationType,
                 dateReportedOnlyDate, RecordStatus,
                 AddressStreet, AddressCity, AddressState,
-                AddressZipCode, Distance);
+                AddressZipCode, Math.Round(Distance, 2));
         }
     }
 }
