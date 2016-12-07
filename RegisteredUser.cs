@@ -86,5 +86,14 @@ namespace UnAbandoned
             LongitudeY = longY;
             JobsParticipating = new List<WorkingJob>();
         }
+
+        //---------------------------------------------------------------------
+        //  TO STRING OVERRIDE : string
+        //---------------------------------------------------------------------
+        public override string ToString()
+        {
+                return string.Format("Email : {0} \n", Email);
+        }
+
     }
 }

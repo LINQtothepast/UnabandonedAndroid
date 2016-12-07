@@ -21,22 +21,12 @@ namespace UnAbandoned
             string sentChoice = Intent.GetStringExtra("Choice");
 
             // Create your application here
-            SetContentView(Resource.Layout.GuestChoice);
+            SetContentView(Resource.Layout.LeaderChoice);
 
-            Button GuestSoonest = FindViewById<Button>(Resource.Id.GuestSoonest);
-            Button GuestNearest = FindViewById<Button>(Resource.Id.GuestNearest);
-            Button GuestLatest = FindViewById<Button>(Resource.Id.GuestLatest);
+            Button LeaderNearest = FindViewById<Button>(Resource.Id.LeaderNearest);
+            Button LeaderLatest = FindViewById<Button>(Resource.Id.LeaderLatest);
 
-
-            GuestSoonest.Click += delegate
-            {
-                var intent = new Intent(this, typeof(LeaderCreateJobs));
-                intent.PutExtra("Choice", sentChoice);
-                intent.PutExtra("Sort", "Soonest");
-                StartActivity(intent);
-            };
-
-            GuestNearest.Click += delegate
+            LeaderNearest.Click += delegate
             {
                 var intent = new Intent(this, typeof(LeaderCreateJobs));
                 intent.PutExtra("Choice", sentChoice);
@@ -44,7 +34,7 @@ namespace UnAbandoned
                 StartActivity(intent);
             };
 
-            GuestLatest.Click += delegate
+            LeaderLatest.Click += delegate
             {
                 var intent = new Intent(this, typeof(LeaderCreateJobs));
                 intent.PutExtra("Choice", sentChoice);

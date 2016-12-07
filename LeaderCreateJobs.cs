@@ -25,9 +25,81 @@ namespace UnAbandoned
 
             // Create your application here
             List<Project> sortedCollection = new List<Project>();
-            sortedCollection = ProjectCollection.AndroidTenMostRecent();
+            List<Project> tempCollection = new List<Project>();
+            tempCollection = ProjectCollection.AndroidAny();
+            double tempDistance = 0;
+            foreach (var element in tempCollection)
+            {
+                tempDistance = LocationMath.CalcDistance
+                    (Convert.ToDouble(element.LatitudeX),
+                    Convert.ToDouble(element.LongitudeY));
+                tempDistance = Math.Round(tempDistance, 3);
+                element.Distance = tempDistance;
+            }
 
+            if (sentChoice == "Any")
+            {
+                if (sentSort == "Nearest")
+                {
+                    sortedCollection = ProjectCollection.AndroidAny();
+                    sortedCollection.OrderByDescending(element => element.Distance);
+                }
+                else if (sentSort == "Latest")
+                {
+                    sortedCollection = ProjectCollection.AndroidAny();
+                }
+            }
+            else if (sentChoice == "Yard")
+            {
+                if (sentSort == "Nearest")
+                {
+                    sortedCollection = ProjectCollection.AndroidYard();
+                    sortedCollection.OrderByDescending(element => element.Distance);
+                }
+                else if (sentSort == "Latest")
+                {
+                    sortedCollection = ProjectCollection.AndroidYard();
+                }
+            }
+            else if (sentChoice == "House")
+            {
+                if (sentSort == "Nearest")
+                {
+                    sortedCollection = ProjectCollection.AndroidHouse();
+                    sortedCollection.OrderByDescending(element => element.Distance);
+                }
+                else if (sentSort == "Latest")
+                {
+                    sortedCollection = ProjectCollection.AndroidHouse();
+                }
+            }
+            else if (sentChoice == "Trash")
+            {
+                if (sentSort == "Nearest")
+                {
+                    sortedCollection = ProjectCollection.AndroidTrash();
+                    sortedCollection.OrderByDescending(element => element.Distance);
+                }
+                else if (sentSort == "Latest")
+                {
+                    sortedCollection = ProjectCollection.AndroidTrash();
+                }
+            }
+            else if (sentChoice == "Other")
+            {
+                if (sentSort == "Nearest")
+                {
+                    sortedCollection = ProjectCollection.AndroidOther();
+                    sortedCollection.OrderByDescending(element => element.Distance);
+                }
+                else if (sentSort == "Latest")
+                {
+                    sortedCollection = ProjectCollection.AndroidOther();
+                }
+            }
+            
             ListAdapter = new ArrayAdapter<Project>(this, Android.Resource.Layout.SimpleListItem1, sortedCollection);
+
 
             ListView.ItemClick += (object sender, Android.Widget.AdapterView.ItemClickEventArgs e) =>
             {

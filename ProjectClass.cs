@@ -50,13 +50,14 @@ namespace UnAbandoned
         private decimal longitudeY;
         private string recordStatus;
         private DateTime recordStatusDate;
+        private double distance;
 
         //=====================================================================
         //  CONSTRUCTOR
         //=====================================================================
         public Project(string street, string city, string state, int zipCode,
             string id, string vType, DateTime dateReport, decimal latitude,
-            decimal longitude, string rStatus, DateTime rStatusDate) 
+            decimal longitude, string rStatus, DateTime rStatusDate, double dist = 0) 
             : base(street, city, state, zipCode)
         {
             RecordID = id;
@@ -66,6 +67,7 @@ namespace UnAbandoned
             LongitudeY = longitude;
             RecordStatus = rStatus;
             RecordStatusDate = rStatusDate;
+            Distance = dist;
         }
 
         //=====================================================================
@@ -130,7 +132,7 @@ namespace UnAbandoned
             }
         }
 
-//NEED TO FIX EXCEPTION HANDLING FOR DATETIME, RIGHT NOW LIMITED
+        //NEED TO FIX EXCEPTION HANDLING FOR DATETIME, RIGHT NOW LIMITED
         //---------------------------------------------------------------------
         //  DATE REPORTED
         //---------------------------------------------------------------------
@@ -300,7 +302,7 @@ namespace UnAbandoned
             }
         }
 
-//NEED TO FIX EXCEPTION HANDLING FOR DATETIME, RIGHT NOW LIMITED
+        //NEED TO FIX EXCEPTION HANDLING FOR DATETIME, RIGHT NOW LIMITED
         //---------------------------------------------------------------------
         //  RECORD STATUS DATE
         //---------------------------------------------------------------------
@@ -340,6 +342,15 @@ namespace UnAbandoned
             }
         }
 
+        //---------------------------------------------------------------------
+        //  Distance
+        //---------------------------------------------------------------------
+        public double Distance
+        {
+            get { return distance; }
+            set { distance = value; }
+        }
+
         //=====================================================================
         //  METHODS
         //=====================================================================
@@ -352,15 +363,17 @@ namespace UnAbandoned
             var dateReportedOnlyDate = DateReported.ToShortDateString();
             var dateRecordStatusOnlyDate = DateReported.ToShortDateString();
 
-            return string.Format("\t 0)Lat: {0}   1)Long: {1}  "+
-                "2)RecID: {2}\n\t 3)Violation: {3}   "+
-                "4)Reported: {4} \n\t 5)Status: {5}  " +
-                "6)Updated: {6}\n\t 7)Address: {7}   "+
-                "8)City: {8} \n\t 9)State: {9}   10)Zip: {10}",
-                LatitudeX, LongitudeY, RecordID, ViolationType,
-                dateReportedOnlyDate, RecordStatus, dateRecordStatusOnlyDate,
+            return string.Format("RecID: {0}\n" +
+                "Violation: {1}\n" +
+                "Reported: {2}\n"  +
+                "Status: {3}\n" +
+                "Address: {4}\n"+
+                "City: {5}  State: {6}  Zip: {7}\n"  +
+                "Distance From Me: {8} Miles",
+                RecordID, ViolationType,
+                dateReportedOnlyDate, RecordStatus,
                 AddressStreet, AddressCity, AddressState,
-                AddressZipCode);
+                AddressZipCode, Distance);
         }
     }
 }

@@ -14,12 +14,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/EmailTextBox"
+        android:hint="Enter Email Here"
         android:text="admin@gmail.com" />
     <EditText
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/PasswordTextBox"
+        android:hint="Enter Password Here"
         android:text="admin" />
     <Button
         android:text="@string/login"
@@ -31,5 +33,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/SignUpButton"
-        android:enabled="false" />
+        android:enabled="true" />
 </LinearLayout>

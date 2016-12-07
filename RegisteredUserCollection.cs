@@ -17,8 +17,14 @@ namespace UnAbandoned
                               decimal latX = 41.662500m,
                               decimal longY = -86.219508m)
         {
-            RegisteredUserList.Add(new RegisteredUser(authLevel, userFirst, userLast,
+            bool x = true;
+            foreach (var element in RegisteredUserList)
+            { if (element.Email == userEmail) x = false; }
+            if (x == true)
+            {
+                RegisteredUserList.Add(new RegisteredUser(authLevel, userFirst, userLast,
                 userEmail, password, latX, longY));
+            }
         }
 
         public static bool AndroidCheckUser(string userEmail)
@@ -69,6 +75,18 @@ namespace UnAbandoned
         public static int AndroidGetCount()
         {
             return RegisteredUserList.Count();
+        }
+
+        //test list display
+        public static List<RegisteredUser> ReturnTestList()
+        {
+            List<RegisteredUser> theList = new List<RegisteredUser>();
+            foreach (var element in RegisteredUserList)
+            {
+                theList.Add(element);
+            }
+
+            return theList;
         }
     }
 }

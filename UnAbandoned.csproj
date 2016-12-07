@@ -46,6 +46,7 @@
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
@@ -59,6 +60,7 @@
     <Compile Include="LeaderCreateJobs.cs" />
     <Compile Include="LeaderLogin.cs" />
     <Compile Include="LeaderSelectDetails.cs" />
+    <Compile Include="LocationMath.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="ParentAddress.cs" />
     <Compile Include="ProjectClass.cs" />
@@ -77,6 +79,7 @@
     <AndroidResource Include="Resources\layout\GuestLandingPage.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <None Include="App.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\LeaderPick2.axml">
@@ -86,6 +89,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\LeaderDetails.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\LeaderChoice.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

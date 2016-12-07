@@ -635,33 +635,103 @@ namespace UnAbandoned
             }
         }
 
-        public static List<Project> AndroidTenMostRecent()
+        public static List<Project> AndroidAny()
         {
-            var sortedByDateReported = JobCollection.
+            var Any = JobCollection.
                 OrderByDescending(element => element.DateReported).
-                ThenBy(element => element.RecordStatus).
-                Take(10);
+                ThenBy(element => element.RecordStatus);
 
             List<Project> theList = new List<Project>();
-            foreach (var element in sortedByDateReported)
+            foreach (var element in Any)
             {
                 theList.Add(element);
             }
+            return theList;
+        }
+        
+        public static List<Project> AndroidYard()
+        {
+            var GrassAndWeeds = JobCollection.
+                Where(element => element.ViolationType == "Grass and Weeds").
+                OrderByDescending(element => element.DateReported).
+                ThenBy(element => element.RecordStatus);
+
+            var Vegetation = JobCollection.
+                Where(element => element.ViolationType == "Vegetation").
+                OrderByDescending(element => element.DateReported).
+                ThenBy(element => element.RecordStatus);
+
+            List<Project> theList = new List<Project>();
+            theList.AddRange(GrassAndWeeds);
+            theList.AddRange(Vegetation);
+            return theList;
+        }
+        
+        public static List<Project> AndroidHouse()
+        {
+            var Graffiti = JobCollection.
+                Where(element => element.ViolationType == "Graffiti").
+                OrderByDescending(element => element.DateReported).
+                ThenBy(element => element.RecordStatus);
+
+            List<Project> theList = new List<Project>();
+            theList.AddRange(Graffiti);
+            return theList;
+        }
+        public static List<Project> AndroidTrash()
+        {
+            var Litter = JobCollection.
+                Where(element => element.ViolationType == "Litter").
+                OrderByDescending(element => element.DateReported).
+                ThenBy(element => element.RecordStatus);
+
+            List<Project> theList = new List<Project>();
+            theList.AddRange(Litter);
+            return theList;
+        }
+        public static List<Project> AndroidOther()
+        {
+            var ContinuousEnforcement = JobCollection.
+                Where(element => element.ViolationType == "Continuous Enforcement").
+                OrderByDescending(element => element.DateReported).
+                ThenBy(element => element.RecordStatus);
+
+            var ContinuousEnforcementGrass = JobCollection.
+                Where(element => element.ViolationType == "Continuous Enforcement Grass").
+                OrderByDescending(element => element.DateReported).
+                ThenBy(element => element.RecordStatus);
+
+            var Snow = JobCollection.
+                Where(element => element.ViolationType == "Snow").
+                OrderByDescending(element => element.DateReported).
+                ThenBy(element => element.RecordStatus);
+
+            List<Project> theList = new List<Project>();
+            theList.AddRange(ContinuousEnforcement);
+            theList.AddRange(ContinuousEnforcementGrass);
+            theList.AddRange(Snow);
 
             return theList;
         }
-
+        
         public static void AndroidAddProjectToList(string tempFullStreetAddress,
                     string tempAddressCity, string tempAddressState, int tempAddressZipCode,
                     string tempRecordID, string tempViolationType, DateTime theReportDate,
                     decimal tempLatitude, decimal tempLongitude, string tempRecordStatus, DateTime theRecordStatusDate)
         {
-            JobCollection.Add(new Project(tempFullStreetAddress,
-                    tempAddressCity, tempAddressState, tempAddressZipCode,
-                    tempRecordID, tempViolationType, theReportDate,
-                    tempLatitude, tempLongitude, tempRecordStatus, theRecordStatusDate));
+            bool x = true;
+            foreach (var element in JobCollection)
+            {
+                if (element.RecordID == tempRecordID) x = false;
+            }
+            if (x == true)
+            {
+                JobCollection.Add(new Project(tempFullStreetAddress,
+                                    tempAddressCity, tempAddressState, tempAddressZipCode,
+                                    tempRecordID, tempViolationType, theReportDate,
+                                    tempLatitude, tempLongitude, tempRecordStatus, theRecordStatusDate));
+            }
         }
-
-
+        
     }
 }

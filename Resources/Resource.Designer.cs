@@ -63,17 +63,17 @@ namespace UnAbandoned
 			// aapt resource value: 0x7f050005
 			public const int Any = 2131034117;
 			
-			// aapt resource value: 0x7f050010
-			public const int AvailableProjects = 2131034128;
+			// aapt resource value: 0x7f050012
+			public const int AvailableProjects = 2131034130;
 			
 			// aapt resource value: 0x7f050000
 			public const int ChangeText = 2131034112;
 			
-			// aapt resource value: 0x7f05000a
-			public const int EditableView = 2131034122;
+			// aapt resource value: 0x7f05000c
+			public const int EditableView = 2131034124;
 			
-			// aapt resource value: 0x7f050012
-			public const int EmailTextBox = 2131034130;
+			// aapt resource value: 0x7f050014
+			public const int EmailTextBox = 2131034132;
 			
 			// aapt resource value: 0x7f050003
 			public const int GuestLatest = 2131034115;
@@ -87,26 +87,32 @@ namespace UnAbandoned
 			// aapt resource value: 0x7f050007
 			public const int House = 2131034119;
 			
-			// aapt resource value: 0x7f05000e
-			public const int Lead = 2131034126;
+			// aapt resource value: 0x7f050010
+			public const int Lead = 2131034128;
 			
-			// aapt resource value: 0x7f05000f
-			public const int Lend = 2131034127;
+			// aapt resource value: 0x7f05000b
+			public const int LeaderLatest = 2131034123;
+			
+			// aapt resource value: 0x7f05000a
+			public const int LeaderNearest = 2131034122;
 			
 			// aapt resource value: 0x7f050011
-			public const int Login = 2131034129;
+			public const int Lend = 2131034129;
 			
-			// aapt resource value: 0x7f050014
-			public const int LoginButton = 2131034132;
+			// aapt resource value: 0x7f050013
+			public const int Login = 2131034131;
+			
+			// aapt resource value: 0x7f050016
+			public const int LoginButton = 2131034134;
 			
 			// aapt resource value: 0x7f050009
 			public const int Other = 2131034121;
 			
-			// aapt resource value: 0x7f050013
-			public const int PasswordTextBox = 2131034131;
-			
 			// aapt resource value: 0x7f050015
-			public const int SignUpButton = 2131034133;
+			public const int PasswordTextBox = 2131034133;
+			
+			// aapt resource value: 0x7f050017
+			public const int SignUpButton = 2131034135;
 			
 			// aapt resource value: 0x7f050008
 			public const int Trash = 2131034120;
@@ -114,17 +120,17 @@ namespace UnAbandoned
 			// aapt resource value: 0x7f050006
 			public const int Yard = 2131034118;
 			
-			// aapt resource value: 0x7f05000b
-			public const int editText1 = 2131034123;
+			// aapt resource value: 0x7f05000d
+			public const int editText1 = 2131034125;
 			
 			// aapt resource value: 0x7f050004
 			public const int textView1 = 2131034116;
 			
-			// aapt resource value: 0x7f05000c
-			public const int textView2 = 2131034124;
+			// aapt resource value: 0x7f05000e
+			public const int textView2 = 2131034126;
 			
-			// aapt resource value: 0x7f05000d
-			public const int textView3 = 2131034125;
+			// aapt resource value: 0x7f05000f
+			public const int textView3 = 2131034127;
 			
 			static Id()
 			{
@@ -146,16 +152,19 @@ namespace UnAbandoned
 			public const int GuestLandingPage = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int LeaderDetails = 2130903042;
+			public const int LeaderChoice = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int LeaderPick2 = 2130903043;
+			public const int LeaderDetails = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int LeadPickFromList = 2130903044;
+			public const int LeaderPick2 = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int Main = 2130903045;
+			public const int LeadPickFromList = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int Main = 2130903046;
 			
 			static Layout()
 			{
