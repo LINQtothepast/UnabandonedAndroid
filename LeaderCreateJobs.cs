@@ -26,7 +26,7 @@ namespace UnAbandoned
             // Create your application here
             List<Project> sortedCollection = new List<Project>();
             List<Project> tempCollection = new List<Project>();
-            tempCollection = ProjectCollection.AndroidAny();
+            tempCollection = ProjectCollection.AndroidFullList();
             double tempDistance = 0;
             foreach (var element in tempCollection)
             {

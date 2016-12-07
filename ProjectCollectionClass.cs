@@ -634,6 +634,10 @@ namespace UnAbandoned
 
             }
         }
+        public static List<Project> AndroidFullList()
+        {
+            return JobCollection;
+        }
 
         public static List<Project> AndroidAny()
         {
