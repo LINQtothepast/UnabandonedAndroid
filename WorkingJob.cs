@@ -15,6 +15,7 @@ namespace UnAbandoned
         private List<string> volunteerEmail;
         private int volunteerCount;
         private DateTime jobDate;
+        private DateTime jobTime;
         private string jobStatus;
 
         public string LeaderEmail
@@ -27,12 +28,12 @@ namespace UnAbandoned
             get { return jobProject; }
             set { jobProject = value; }
         }
-        private List<string> VolunteerEmail
+        public List<string> VolunteerEmail
         {
             get { return volunteerEmail; }
             set { volunteerEmail = value; }
         }
-        private int VolunteerCount
+        public int VolunteerCount
         {
             get
             {
@@ -46,12 +47,17 @@ namespace UnAbandoned
                     volunteerCount = VolunteerEmail.Count();
             }
         }
-        private DateTime JobDate
+        public DateTime JobDate
         {
             get { return jobDate; }
             set { jobDate = value; }
         }
-        private string JobStatus
+        public DateTime JobTime
+        {
+            get { return jobDate; }
+            set { jobDate = value; }
+        }
+        public string JobStatus
         {
             get
             {
@@ -63,14 +69,33 @@ namespace UnAbandoned
             }
         }
         public WorkingJob(string LEmail, Project job, List<string> VEmail,
-                          int count, DateTime date, string status = "open")
+                          int count, DateTime date, DateTime time, string status = "open")
         {
             LeaderEmail = LEmail;
             JobProject = job;
             VolunteerEmail = VEmail;
             VolunteerCount = count;
             JobDate = date;
+            JobTime = time;
             JobStatus = status;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Case Number: {0}\n" +
+                "Leader Contact Info : {1}\n" +
+                "Date : {2}\n" +
+                "Time : {3}\n" +
+                "Street Address : {4}\n" +
+                "City : {5}   Zip Code : {6}\n" +
+                "Distance Away : {7} Miles\n" +
+                "Project Type : {8}",
+                JobProject.RecordID,
+                LeaderEmail, JobDate.ToShortDateString(),
+                JobTime.ToShortTimeString(),
+                JobProject.AddressStreet, JobProject.AddressCity,
+                JobProject.AddressZipCode, JobProject.Distance,
+                JobProject.ViolationType);
         }
     }
 }

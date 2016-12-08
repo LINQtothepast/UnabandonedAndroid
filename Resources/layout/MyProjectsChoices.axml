@@ -3,19 +3,25 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <Button
-        android:text="Lead a Team"
+    <TextView
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Lead" />
+        android:id="@+id/textView1" />
     <Button
-        android:text="Lend a Hand"
+        android:text="Cancel Participation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Lend" />
+        android:id="@+id/MyCancelButton" />
     <Button
-        android:text="View My Projects"
+        android:text="Mark Job As Finished"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/LeaderView" />
+        android:id="@+id/CloseJobButton" />
+    <Button
+        android:text="Do Nothing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DoNothingButton" />
 </LinearLayout>

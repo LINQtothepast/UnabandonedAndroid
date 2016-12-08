@@ -634,6 +634,7 @@ namespace UnAbandoned
 
             }
         }
+        
         public static List<Project> AndroidFullList()
         {
             return JobCollection;
@@ -642,6 +643,7 @@ namespace UnAbandoned
         public static List<Project> AndroidAny()
         {
             var Any = JobCollection.
+                Where(element => element.InUse == false).
                 OrderByDescending(element => element.DateReported).
                 ThenBy(element => element.RecordStatus);
 
@@ -657,11 +659,13 @@ namespace UnAbandoned
         {
             var GrassAndWeeds = JobCollection.
                 Where(element => element.ViolationType == "Grass and Weeds").
+                Where(element => element.InUse == false).
                 OrderByDescending(element => element.DateReported).
                 ThenBy(element => element.RecordStatus);
 
             var Vegetation = JobCollection.
                 Where(element => element.ViolationType == "Vegetation").
+                Where(element => element.InUse == false).
                 OrderByDescending(element => element.DateReported).
                 ThenBy(element => element.RecordStatus);
 
@@ -675,6 +679,7 @@ namespace UnAbandoned
         {
             var Graffiti = JobCollection.
                 Where(element => element.ViolationType == "Graffiti").
+                Where(element => element.InUse == false).
                 OrderByDescending(element => element.DateReported).
                 ThenBy(element => element.RecordStatus);
 
@@ -686,6 +691,7 @@ namespace UnAbandoned
         {
             var Litter = JobCollection.
                 Where(element => element.ViolationType == "Litter").
+                Where(element => element.InUse == false).
                 OrderByDescending(element => element.DateReported).
                 ThenBy(element => element.RecordStatus);
 
@@ -697,16 +703,19 @@ namespace UnAbandoned
         {
             var ContinuousEnforcement = JobCollection.
                 Where(element => element.ViolationType == "Continuous Enforcement").
+                Where(element => element.InUse == false).
                 OrderByDescending(element => element.DateReported).
                 ThenBy(element => element.RecordStatus);
 
             var ContinuousEnforcementGrass = JobCollection.
                 Where(element => element.ViolationType == "Continuous Enforcement Grass").
+                Where(element => element.InUse == false).
                 OrderByDescending(element => element.DateReported).
                 ThenBy(element => element.RecordStatus);
 
             var Snow = JobCollection.
                 Where(element => element.ViolationType == "Snow").
+                Where(element => element.InUse == false).
                 OrderByDescending(element => element.DateReported).
                 ThenBy(element => element.RecordStatus);
 

@@ -105,13 +105,14 @@ namespace UnAbandoned
             ListView.ItemClick += (object sender, Android.Widget.AdapterView.ItemClickEventArgs e) =>
             {
                 string key = ListView.GetItemAtPosition(e.Position).ToString();
-                
-                
-                var intent = new Intent(this, typeof(ThreadDemo));
-                intent.PutExtra ("Key", key);
+                string[] lines = key.Split('\n');
+                lines = lines[0].Split(' ');
+                string passString = lines[1];
+
+                var intent = new Intent(this, typeof(LeaderSelectDetails));
                 intent.PutExtra("User", sentUser);
+                intent.PutExtra("Parse", passString);
                 StartActivity(intent);
-                
             };
 
             //List<string> random = new List<string>();

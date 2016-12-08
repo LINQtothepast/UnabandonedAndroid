@@ -22,7 +22,7 @@ namespace UnAbandoned
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
+            string x;
         //ProjectCollection.FillProjectObjects();
         DateTime value = new DateTime(2016, 11, 1, 5, 20, 00);
             ProjectCollection.AndroidAddProjectToList("street Address1", "city1", "state1", 46637, "ENV-15-00367",
@@ -30,7 +30,7 @@ namespace UnAbandoned
             ProjectCollection.AndroidAddProjectToList("street Address2", "city2", "state2", 46638, "ENV-15-00368",
                "Litter", value, 41.74287198m, -86.26281856m, "Open", value);
             ProjectCollection.AndroidAddProjectToList("street Address3", "city3", "state3", 46639, "ENV-15-00369",
-               "Grass and Weeds", value, 41.74287198m, -86.26281856m, "Open", value);
+               "Grass and Weeds", value, 41.74280000m, -86.26280000m, "Open", value);
 
             RegisteredUserCollection.AndroidAddUserToList(0, "guest", "guest", "guest@gmail.com", "guest");
             RegisteredUserCollection.AndroidAddUserToList(1, "leader", "leader", "leader@gmail.com", "leader");

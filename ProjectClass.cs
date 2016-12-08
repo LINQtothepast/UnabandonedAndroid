@@ -51,13 +51,15 @@ namespace UnAbandoned
         private string recordStatus;
         private DateTime recordStatusDate;
         private double distance;
+        private bool inUse;
 
         //=====================================================================
         //  CONSTRUCTOR
         //=====================================================================
         public Project(string street, string city, string state, int zipCode,
             string id, string vType, DateTime dateReport, decimal latitude,
-            decimal longitude, string rStatus, DateTime rStatusDate, double dist = 0) 
+            decimal longitude, string rStatus, DateTime rStatusDate, double dist = 0,
+            bool use = false) 
             : base(street, city, state, zipCode)
         {
             RecordID = id;
@@ -68,6 +70,7 @@ namespace UnAbandoned
             RecordStatus = rStatus;
             RecordStatusDate = rStatusDate;
             Distance = dist;
+            InUse = use;
         }
 
         //=====================================================================
@@ -350,6 +353,16 @@ namespace UnAbandoned
             get { return distance; }
             set { distance = value; }
         }
+
+        //---------------------------------------------------------------------
+        //  Distance
+        //---------------------------------------------------------------------
+        public bool InUse
+        {
+            get { return inUse; }
+            set { inUse = value; }
+        }
+
 
         //=====================================================================
         //  METHODS

@@ -27,6 +27,8 @@ namespace UnAbandoned
 
             Button LeadButton = FindViewById<Button>(Resource.Id.Lead);
             Button LendButton = FindViewById<Button>(Resource.Id.Lend);
+            Button ViewButton = FindViewById<Button>(Resource.Id.LeaderView);
+
 
             LeadButton.Click += delegate
             {
@@ -37,6 +39,12 @@ namespace UnAbandoned
             LendButton.Click += delegate
             {
                 var intent = new Intent(this, typeof(GuestLogin));
+                intent.PutExtra("User", sentUser);
+                StartActivity(intent);
+            };
+            ViewButton.Click += delegate
+            {
+                var intent = new Intent(this, typeof(ViewMyProjects));
                 intent.PutExtra("User", sentUser);
                 StartActivity(intent);
             };
