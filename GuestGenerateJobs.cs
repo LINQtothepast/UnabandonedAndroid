@@ -43,7 +43,7 @@ namespace UnAbandoned
                 else if (sentSort == "Latest")
                 {
                     SortedWorkingJobs = WorkingJobCollection.AndroidAny();
-                    SortedWorkingJobs.OrderBy(element => element.JobProject.DateReported);
+                    SortedWorkingJobs.OrderByDescending(element => element.JobProject.DateReported);
                 }
             }
             else if (sentChoice == "Yard")
@@ -62,7 +62,7 @@ namespace UnAbandoned
                 else if (sentSort == "Latest")
                 {
                     SortedWorkingJobs = WorkingJobCollection.AndroidYard();
-                    SortedWorkingJobs.OrderBy(element => element.JobProject.DateReported);
+                    SortedWorkingJobs.OrderByDescending(element => element.JobProject.DateReported);
                 }
             }
             else if (sentChoice == "House")
@@ -81,7 +81,7 @@ namespace UnAbandoned
                 else if (sentSort == "Latest")
                 {
                     SortedWorkingJobs = WorkingJobCollection.AndroidHouse();
-                    SortedWorkingJobs.OrderBy(element => element.JobProject.DateReported);
+                    SortedWorkingJobs.OrderByDescending(element => element.JobProject.DateReported);
                 }
             }
             else if (sentChoice == "Trash")
@@ -100,7 +100,7 @@ namespace UnAbandoned
                 else if (sentSort == "Latest")
                 {
                     SortedWorkingJobs = WorkingJobCollection.AndroidTrash();
-                    SortedWorkingJobs.OrderBy(element => element.JobProject.DateReported);
+                    SortedWorkingJobs.OrderByDescending(element => element.JobProject.DateReported);
                 }
             }
             else if (sentChoice == "Other")
@@ -119,7 +119,7 @@ namespace UnAbandoned
                 else if (sentSort == "Latest")
                 {
                     SortedWorkingJobs = WorkingJobCollection.AndroidOther();
-                    SortedWorkingJobs.OrderBy(element => element.JobProject.DateReported);
+                    SortedWorkingJobs.OrderByDescending(element => element.JobProject.DateReported);
                 }
             }
             
@@ -130,7 +130,7 @@ namespace UnAbandoned
                 string key = ListView.GetItemAtPosition(e.Position).ToString();
                 string[] lines = key.Split('\n');
                 lines = lines[0].Split(' ');
-                string passString = lines[1];
+                string passString = lines[2];
 
                 var intent = new Intent(this, typeof(GuestConfirm));
                 intent.PutExtra("Key", passString);

@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using SQLite;
 
 namespace UnAbandoned
 {
@@ -30,7 +31,7 @@ namespace UnAbandoned
                 string key = ListView.GetItemAtPosition(e.Position).ToString();
                 string[] lines = key.Split('\n');
                 lines = lines[0].Split(' ');
-                string passString = lines[1];
+                string passString = lines[2];
 
                 var intent = new Intent(this, typeof(ViewMyProjectsAction));
                 intent.PutExtra("Key", passString);

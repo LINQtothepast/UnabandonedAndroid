@@ -82,7 +82,7 @@ namespace UnAbandoned
 
         public override string ToString()
         {
-            return string.Format("Case Number: {0}\n" +
+            return string.Format("Case Number: {0} \n" +
                 "Leader Contact Info : {1}\n" +
                 "Date : {2}\n" +
                 "Time : {3}\n" +

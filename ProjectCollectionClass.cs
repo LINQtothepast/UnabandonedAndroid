@@ -38,6 +38,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Text.RegularExpressions;
+//using SQLite;
 
 namespace UnAbandoned
 {
@@ -45,15 +46,16 @@ namespace UnAbandoned
     public class ProjectCollection
     {
         static List<Project> JobCollection = new List<Project>();
-
+        /*
         //Fill Objects with data
-        static public void FillProjectObjects()
+        static public void AndroidFillProjectObjects()
         {
-            string source;
-            //Console.WriteLine("Enter the file path for the csv to load data from");
-            //source = Console.ReadLine();
-            source = "../UnAbandoned/testFixed1000.csv";
-            String[] lines = File.ReadAllLines(source);
+            string sourcePath = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.Personal),
+                "CodeEnf.db");
+            
+            //String[] lines = File.ReadAllLines(source);
+            var connection = new SqliteConnection ("Data source=" + sourcePath)
             var query = from line in lines
                         let data = line.Split(',')
                         select new
@@ -79,7 +81,7 @@ namespace UnAbandoned
                         };
 
             decimal tempLongitude, tempLatitude;
-            string tempRecordID, /*tempViolationCategory,*/ tempViolationType;
+            string tempRecordID, tempViolationCategory, tempViolationType;
             string tempReportDate, tempRecordStatus, tempRecordStatusDate;
             string tempAddressStreetNumber, tempAddressStreetDirection;
             string tempAddressStreet, tempAddressStreetType;
@@ -121,7 +123,7 @@ namespace UnAbandoned
                     tempLatitude, tempLongitude, tempRecordStatus, theRecordStatusDate));
             }
         }
-
+        */
         //Clear all data
         public static void ClearAllData()
         {

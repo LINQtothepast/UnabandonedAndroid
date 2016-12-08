@@ -38,13 +38,13 @@ namespace UnAbandoned
         {
             var GrassAndWeeds = WorkingJobList.
                 Where(element => element.JobStatus == "open").
-                Where(element => element.VolunteerEmail.Count() != element.VolunteerCount).
+                //Where(element => element.VolunteerEmail.Count() != element.VolunteerCount).
                 Where(element => element.JobProject.ViolationType == "Grass and Weeds").
                  OrderByDescending(element => element.JobProject.DateReported);
 
             var Vegetation = WorkingJobList.
                 Where(element => element.JobStatus == "open").
-                Where(element => element.VolunteerEmail.Count() != element.VolunteerCount).
+                //Where(element => element.VolunteerEmail.Count() != element.VolunteerCount).
                 Where(element => element.JobProject.ViolationType == "Vegetation").
                  OrderByDescending(element => element.JobProject.DateReported);
 
@@ -58,7 +58,7 @@ namespace UnAbandoned
         {
             var Graffiti = WorkingJobList.
                 Where(element => element.JobStatus == "open").
-                Where(element => element.VolunteerEmail.Count() != element.VolunteerCount).
+                //Where(element => element.VolunteerEmail.Count() != element.VolunteerCount).
                 Where(element => element.JobProject.ViolationType == "Graffiti").
                  OrderByDescending(element => element.JobProject.DateReported);
 
@@ -70,7 +70,7 @@ namespace UnAbandoned
         {
             var Litter = WorkingJobList.
                 Where(element => element.JobStatus == "open").
-                Where(element => element.VolunteerEmail.Count() != element.VolunteerCount).
+                //Where(element => element.VolunteerEmail.Count() != element.VolunteerCount).
                 Where(element => element.JobProject.ViolationType == "Litter").
                  OrderByDescending(element => element.JobProject.DateReported);
 
@@ -82,19 +82,19 @@ namespace UnAbandoned
         {
             var ContinuousEnforcement = WorkingJobList.
                 Where(element => element.JobStatus == "open").
-                Where(element => element.VolunteerEmail.Count() != element.VolunteerCount).
+                //Where(element => element.VolunteerEmail.Count() != element.VolunteerCount).
                 Where(element => element.JobProject.ViolationType == "Continuous Enforcement").
                  OrderByDescending(element => element.JobProject.DateReported);
 
             var ContinuousEnforcementGrass = WorkingJobList.
                 Where(element => element.JobStatus == "open").
-                Where(element => element.VolunteerEmail.Count() != element.VolunteerCount).
+                //Where(element => element.VolunteerEmail.Count() != element.VolunteerCount).
                 Where(element => element.JobProject.ViolationType == "Continuous Enforcement Grass").
                  OrderByDescending(element => element.JobProject.DateReported);
 
             var Snow = WorkingJobList.
                 Where(element => element.JobStatus == "open").
-                Where(element => element.VolunteerEmail.Count() != element.VolunteerCount).
+                //Where(element => element.VolunteerEmail.Count() != element.VolunteerCount).
                 Where(element => element.JobProject.ViolationType == "Snow").
                  OrderByDescending(element => element.JobProject.DateReported);
 
@@ -163,5 +163,6 @@ namespace UnAbandoned
                 }
             }
         }
+
     }
 }

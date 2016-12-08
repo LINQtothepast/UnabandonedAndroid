@@ -27,7 +27,7 @@ namespace UnAbandoned
 
             // Create a new TextView and set it as our view
             textview = new TextView(this);
-            textview.Text = sentParse;
+            textview.Text = sentKey;
 
             SetContentView(textview);
         }
