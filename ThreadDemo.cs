@@ -23,10 +23,11 @@ namespace UnAbandoned
         {
             base.OnCreate(bundle);
             string sentKey = Intent.GetStringExtra("Key");
+            string sentParse = Intent.GetStringExtra("Parse");
 
             // Create a new TextView and set it as our view
             textview = new TextView(this);
-            textview.Text = "text";
+            textview.Text = sentParse;
 
             SetContentView(textview);
         }
